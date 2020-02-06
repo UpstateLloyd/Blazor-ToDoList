@@ -49,3 +49,5 @@ C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreap
 C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\Razor\Pages\Todo.razor.g.cs
 C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Calculator.razor.g.cs
 C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\Razor\Pages\Calculator.razor.g.cs
+C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Countercopy.razor.g.cs
+C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\Razor\Pages\Countercopy.razor.g.cs

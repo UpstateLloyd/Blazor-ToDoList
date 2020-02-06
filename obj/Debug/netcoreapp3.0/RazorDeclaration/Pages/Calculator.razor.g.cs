@@ -77,7 +77,7 @@ using ToDoList.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Calculator")]
-    public class Calculator : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Calculator : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
