@@ -8,7 +8,7 @@
         <div class="calculator-grid">
             <div class="output">
                 <div data-previous-operand class="previous-operand">123</div>
-                <div data-current-operand class="current-operand">@_message</div>
+                <div data-current-operand class="current-operand">@*@_message*@</div>
             </div>
             <input placeholder="Increment Amount" @bind="IncrementAmount" />
             <button @onclick="IncrementCount">Add</button>
@@ -63,7 +63,7 @@
 
     private void AddDigit(MouseEventArgs e, string digit)
     {
-        _message = 
+        //var message = "dixie";
     }
 
 }

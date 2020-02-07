@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lhotchkiss\\.nuget\\packages\\": {}
+    "C:\\Users\\Vajane\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj",
+      "projectUniqueName": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
       "projectName": "ToDoList",
-      "projectPath": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj",
-      "packagesPath": "C:\\Users\\lhotchkiss\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\obj\\",
+      "projectPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
+      "packagesPath": "C:\\Users\\Vajane\\.nuget\\packages\\",
+      "outputPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lhotchkiss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vajane\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
