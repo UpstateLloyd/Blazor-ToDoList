@@ -110,3 +110,5 @@ F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.csproj.CopyComplete
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ButtonSelect 2.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\ButtonSelect 2.razor.g.cs
+C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ButtonSelect 2.razor.g.cs
+C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\Razor\Pages\ButtonSelect 2.razor.g.cs
