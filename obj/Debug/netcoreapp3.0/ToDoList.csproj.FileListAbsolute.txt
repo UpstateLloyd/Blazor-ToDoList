@@ -59,12 +59,9 @@ F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.MvcApplicationPartsAssemblyInfo.cache
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.RazorComponent.input.cache
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\App.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ButtonSelect.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Calculator.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Counter.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Countercopy.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Error.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Index.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Todo.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -77,12 +74,9 @@ F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.TagHelpers.output.cache
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.RazorCoreGenerate.cache
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\App.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\ButtonSelect.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Calculator.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Counter.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Countercopy.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Error.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\FetchData.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Index.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Todo.razor.g.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Shared\MainLayout.razor.g.cs
@@ -108,7 +102,7 @@ F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.RazorTargetAssemblyInfo.cs
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.Views.pdb
 F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\ToDoList.csproj.CopyComplete
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ButtonSelect 2.razor.g.cs
-F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\ButtonSelect 2.razor.g.cs
 C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\ButtonSelect 2.razor.g.cs
 C:\Users\lhotchkiss\Documents\Projects\Scripts\Tuts\ToDoList\obj\Debug\netcoreapp3.0\Razor\Pages\ButtonSelect 2.razor.g.cs
+F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Calculator.razor.g.cs
+F:\Projects\personal\Razor Tut\ToDoList\blazor-todolist\obj\Debug\netcoreapp3.0\Razor\Pages\Calculator.razor.g.cs

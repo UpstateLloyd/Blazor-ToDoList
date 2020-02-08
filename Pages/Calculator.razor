@@ -1,29 +1,109 @@
-﻿@page "/Calculator"
-
-<h1>Calculator</h1>
+﻿@page "/calculator"
+@using System.Text 
+<h1>Button Select</h1>
 
 
 <div class="calculator-grid">
     <div class="output">
-        <div data-previous-operand class="previous-operand">123</div>
-        <div data-current-operand class="current-operand">123</div>
+        <div class="previous-operand">@PreviousOperand</div>
+        <div class="current-operand">@CurrentOperand</div>
     </div>
-    <button data-all-clear class="span-two">AC</button>
-    <button data-delete>DEL</button>
-    <button data-operation>/</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation>*</button>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation>+</button>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation>-</button>
-    <button data-number>.</button>
-    <button data-number>0</button>
-    <button data-equals class="span-two">=</button>
+    <button class="span-two" @onclick="@(() => AllClear())">AC</button>
+    <button @onclick="@DeletePressed">Del</button>
+    <button @onclick="@(() => SelectOperation("/"))">/</button>
+    <button @onclick="@(() => UpdateHeading("1"))">1</button>
+    <button @onclick="@(() => UpdateHeading("2"))">2</button>
+    <button @onclick="@(() => UpdateHeading("3"))">3</button>
+    <button @onclick="@(() => SelectOperation("*"))">*</button>
+    <button @onclick="@(() => UpdateHeading("4"))">4</button>
+    <button @onclick="@(() => UpdateHeading("5"))">5</button>
+    <button @onclick="@(() => UpdateHeading("6"))">6</button>
+    <button @onclick="@(() => SelectOperation("+"))">+</button>
+    <button @onclick="@(() => UpdateHeading("7"))">7</button>
+    <button @onclick="@(() => UpdateHeading("8"))">8</button>
+    <button @onclick="@(() => UpdateHeading("9"))">9</button>
+    <button @onclick="@(() => SelectOperation("-"))">-</button>
+    <button @onclick="@(() => UpdateHeading("."))">.</button>
+    <button @onclick="@(() => UpdateHeading("0"))">0</button>
+    <button class="span-two" @onclick="@(() => PerformCalculation(PreviousOperand.Remove(PreviousOperand.Length-1,1), CurrentOperand, Operator))">=</button>
 </div>
+
+@code {
+    StringBuilder CurrentOperand = new StringBuilder();
+    StringBuilder PreviousOperand = new StringBuilder();
+    string Operator = "";
+    Int32 Result = 0;
+
+    private void UpdateHeading(string buttonNumber)
+    {
+        if (!string.IsNullOrWhiteSpace(buttonNumber))
+        {
+            CurrentOperand.Append(buttonNumber);
+        }
+    }
+
+    private void DeletePressed()
+    {
+        if (!string.IsNullOrWhiteSpace(CurrentOperand.ToString()))
+        {
+            CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
+        }
+    }
+
+    private void AllClear()
+    {
+        CurrentOperand.Clear();
+        PreviousOperand.Clear();
+    }
+
+    private void SelectOperation(string NewOperator)
+    {
+        if (!string.IsNullOrWhiteSpace(NewOperator))
+        {
+            PreviousOperand.Clear();
+            PreviousOperand.Append(CurrentOperand);
+            PreviousOperand.Append(NewOperator);
+            CurrentOperand.Clear();
+            Operator = NewOperator;
+        }
+    }
+
+
+
+    private void PerformCalculation(StringBuilder PrevOperand, StringBuilder CurrOperand, string Operator)
+    {
+        if (!String.IsNullOrWhiteSpace(Operator) && CurrOperand.Length > 0 && PrevOperand.Length > 0 )
+        {
+            Int32 IntPrevious = 0;
+            Int32 IntCurrent = 0;
+            String ResultString = "";
+
+            if (Int32.TryParse(PrevOperand.ToString(), out IntPrevious) && Int32.TryParse(CurrOperand.ToString(), out IntCurrent))
+            {
+                switch (Operator)
+                {
+                    case "+":
+                        Result = IntPrevious + IntCurrent;
+                        break;
+                    case "-":
+                        Result = IntPrevious - IntCurrent;
+                        break;
+                    case "*":
+                        Result = IntPrevious * IntCurrent;
+                        break;
+                    case "/":
+                        Result = IntPrevious / IntCurrent;
+                        break;
+                    default:
+                        break;
+                }
+
+                ResultString = Result.ToString();
+                CurrentOperand.Clear();
+                PreviousOperand.Clear();
+                CurrentOperand.Append(ResultString);
+
+            }
+        }
+    }
+}
