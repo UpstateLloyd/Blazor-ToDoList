@@ -3,6 +3,9 @@
 
 <h1>Calculator</h1>
 
+<p>Safe Current: @SafeCurrent</p>
+<p>Safe Previous: @SafePrevious</p>
+<p>Operator: @Operator</p>
 
 <div class="calculator-grid">
     <div class="output">
@@ -26,19 +29,17 @@
     <button @onclick="@(() => SelectOperation("-"))">-</button>
     <button @onclick="@(() => UpdateHeading("."))">.</button>
     <button @onclick="@(() => UpdateHeading("0"))">0</button>
-    <button class="span-two" @onclick="(() => PerformCalculation(PreviousOperand.Remove(PreviousOperand.Length-1,1), CurrentOperand, Operator))">=</button>
+    <button class="span-two" @onclick="(() => PerformCalculation(SafePrevious, SafeCurrent, Operator))">=</button>
 </div>
 
 @code {
     StringBuilder CurrentOperand = new StringBuilder("0");
     StringBuilder PreviousOperand = new StringBuilder();
-    StringBuilder Safecurrent = new StringBuilder("0");
+    StringBuilder SafeCurrent = new StringBuilder("0");
     StringBuilder SafePrevious = new StringBuilder("0");
-    StringBuilder SafeOperator = new StringBuilder("$");
-    string Operator = "";
+    string Operator = "$";
     float Result = 0;
     bool NewOperation = false;
-    bool OperatorExists = false;
 
     private void UpdateHeading(string buttonNumber)
     {
@@ -53,24 +54,19 @@
                         if (!CurrentOperand.ToString().Contains("."))
                         {
                             CurrentOperand.Append(".");
+                            SafeCurrent.Append(".");
                         }
                         else
                         {
                             return;
                         }
                     }
-                    else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
-                    {
-                        Operator = buttonNumber;
-                        CurrentOperand.Append(buttonNumber);
-                        PreviousOperand.Clear();
-                        PreviousOperand.Append(CurrentOperand);
-                        CurrentOperand.Clear();
-                    }
                     else if (float.Parse(buttonNumber) > 0)
                     {
                         CurrentOperand.Clear();
                         CurrentOperand.Append(buttonNumber);
+                        SafeCurrent.Clear();
+                        SafeCurrent.Append(buttonNumber);
                     }
                     else
                     {
@@ -84,23 +80,19 @@
                         if (!CurrentOperand.ToString().Contains("."))
                         {
                             CurrentOperand.Append(".");
+                            SafeCurrent.Append(".");
                         }
                         else
                         {
                             return;
                         }
                     }
-                    else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
-                    {
-                        Operator = buttonNumber;
-                        CurrentOperand.Append(buttonNumber);
-                        PreviousOperand.Clear();
-                        PreviousOperand.Append(CurrentOperand);
-                        CurrentOperand.Clear();
-                    }
                     else
-                    {
+                    {                  
+                        if 
                         CurrentOperand.Append(buttonNumber);
+                        SafeCurrent.Clear();
+                        SafeCurrent.Append(buttonNumber);
                     }
                 }
             }
@@ -111,31 +103,42 @@
                     if (!CurrentOperand.ToString().Contains("."))
                     {
                         CurrentOperand.Append(".");
+                        SafeCurrent.Append(".");
                         NewOperation = false;
                     }
                     else
                     {
                         CurrentOperand.Clear();
                         CurrentOperand.Append("0.");
+                        SafeCurrent.Clear();
+                        SafeCurrent.Append("0.");
                         NewOperation = false;
                     }
                 }
-                else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
-                {
-                    Operator = buttonNumber;
-                    CurrentOperand.Append(buttonNumber);
-                    PreviousOperand.Clear();
-                    PreviousOperand.Append(CurrentOperand);
-                    CurrentOperand.Clear();
-                    CurrentOperand.Append("0");
-                    NewOperation = false;
-                }
                 else
                 {
-                    CurrentOperand.Append(buttonNumber);
-                    NewOperation = false;
+                    if (CurrentOperand.ToString() != "0")
+                    {
+                        CurrentOperand.Append(buttonNumber);
+                        NewOperation = false;
+                        SafeCurrent.Append(buttonNumber);
+                    }
+                    else
+                    {
+                        if (buttonNumber == "0")
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            CurrentOperand.Clear();
+                            CurrentOperand.Append(buttonNumber);
+                            SafeCurrent.Clear();
+                            SafeCurrent.Append(buttonNumber);
+                            NewOperation = false;
+                        }
+                    }
                 }
-
             }
         }
         if (string.IsNullOrWhiteSpace(CurrentOperand.ToString()))
@@ -151,11 +154,14 @@
             if (CurrentOperand.ToString() != "0")
             {
                 CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
+                SafeCurrent.Remove(SafeCurrent.Length - 1, 1);
             }
             else if (CurrentOperand.Length == 1)
             {
                 CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
                 CurrentOperand.Append("0");
+                SafeCurrent.Remove(SafeCurrent.Length - 1, 1);
+                SafeCurrent.Append("0");
             }
             else
             {
@@ -169,7 +175,10 @@
         CurrentOperand.Clear();
         PreviousOperand.Clear();
         CurrentOperand.Append("0");
-        OperatorExists = false;    
+        SafeCurrent.Clear();
+        SafePrevious.Clear();
+        SafePrevious.Append("0");
+        SafeCurrent.Append("0");
     }
 
     private void SelectOperation(string NewOperator)
@@ -181,7 +190,10 @@
             PreviousOperand.Append(NewOperator);
             CurrentOperand.Clear();
             Operator = NewOperator;
-            OperatorExists = true;
+            SafePrevious.Clear();
+            SafePrevious.Append(SafeCurrent);
+            SafeCurrent.Clear();
+            SafeCurrent.Append("0");
         }
     }
 
@@ -189,39 +201,51 @@
 
     private void PerformCalculation(StringBuilder PrevOperand, StringBuilder CurrOperand, string Operator)
     {
-        if (!String.IsNullOrWhiteSpace(Operator) && CurrOperand.Length > 0 && PrevOperand.Length > 0 )
+        if (Operator == "$")
         {
-            float IntPrevious = 0;
-            float IntCurrent = 0;
-            String ResultString = "";
-
-            if (float.TryParse(PrevOperand.ToString(), out IntPrevious) && float.TryParse(CurrOperand.ToString(), out IntCurrent))
+            return;
+        }
+        else
+        {
+            if (!String.IsNullOrWhiteSpace(Operator) && CurrOperand.Length > 0 && PrevOperand.Length > 0)
             {
-                switch (Operator)
-                {
-                    case "+":
-                        Result = IntPrevious + IntCurrent;
-                        break;
-                    case "-":
-                        Result = IntPrevious - IntCurrent;
-                        break;
-                    case "*":
-                        Result = IntPrevious * IntCurrent;
-                        break;
-                    case "/":
-                        Result = IntPrevious / IntCurrent;
-                        break;
-                    default:
-                        break;
-                }
+                float IntPrevious = 0;
+                float IntCurrent = 0;
+                String ResultString = "";
 
-                ResultString = Result.ToString();
-                CurrentOperand.Clear();
-                PreviousOperand.Clear();
-                CurrentOperand.Append(ResultString);
-                NewOperation = true;
-                OperatorExists = false;
+                if (float.TryParse(PrevOperand.ToString(), out IntPrevious) && float.TryParse(CurrOperand.ToString(), out IntCurrent))
+                {
+                    switch (Operator)
+                    {
+                        case "+":
+                            Result = IntPrevious + IntCurrent;
+                            break;
+                        case "-":
+                            Result = IntPrevious - IntCurrent;
+                            break;
+                        case "*":
+                            Result = IntPrevious * IntCurrent;
+                            break;
+                        case "/":
+                            Result = IntPrevious / IntCurrent;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    ResultString = Result.ToString();
+                    CurrentOperand.Clear();
+                    SafeCurrent.Clear();
+                    PreviousOperand.Clear();
+                    SafePrevious.Clear();
+                    SafePrevious.Append("0");
+                    SafeCurrent.Append(ResultString);
+                    CurrentOperand.Append(ResultString);
+                    NewOperation = true;
+                    Operator = "$";
+                }
             }
         }
     }
 }
+
