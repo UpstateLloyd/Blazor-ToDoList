@@ -1,6 +1,7 @@
 ﻿@page "/calculator"
 @using System.Text 
-<h1>Button Select</h1>
+
+<h1>Calculator</h1>
 
 
 <div class="calculator-grid">
@@ -25,20 +26,121 @@
     <button @onclick="@(() => SelectOperation("-"))">-</button>
     <button @onclick="@(() => UpdateHeading("."))">.</button>
     <button @onclick="@(() => UpdateHeading("0"))">0</button>
-    <button class="span-two" @onclick="@(() => PerformCalculation(PreviousOperand.Remove(PreviousOperand.Length-1,1), CurrentOperand, Operator))">=</button>
+    <button class="span-two" @onclick="(() => PerformCalculation(PreviousOperand.Remove(PreviousOperand.Length-1,1), CurrentOperand, Operator))">=</button>
 </div>
 
 @code {
-    StringBuilder CurrentOperand = new StringBuilder();
+    StringBuilder CurrentOperand = new StringBuilder("0");
     StringBuilder PreviousOperand = new StringBuilder();
+    StringBuilder Safecurrent = new StringBuilder("0");
+    StringBuilder SafePrevious = new StringBuilder("0");
+    StringBuilder SafeOperator = new StringBuilder("$");
     string Operator = "";
-    Int32 Result = 0;
+    float Result = 0;
+    bool NewOperation = false;
+    bool OperatorExists = false;
 
     private void UpdateHeading(string buttonNumber)
     {
         if (!string.IsNullOrWhiteSpace(buttonNumber))
         {
-            CurrentOperand.Append(buttonNumber);
+            if (NewOperation == false)
+            {
+                if (CurrentOperand.ToString() == "0")
+                {
+                    if (buttonNumber == ".")
+                    {
+                        if (!CurrentOperand.ToString().Contains("."))
+                        {
+                            CurrentOperand.Append(".");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
+                    {
+                        Operator = buttonNumber;
+                        CurrentOperand.Append(buttonNumber);
+                        PreviousOperand.Clear();
+                        PreviousOperand.Append(CurrentOperand);
+                        CurrentOperand.Clear();
+                    }
+                    else if (float.Parse(buttonNumber) > 0)
+                    {
+                        CurrentOperand.Clear();
+                        CurrentOperand.Append(buttonNumber);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    if (buttonNumber == ".")
+                    {
+                        if (!CurrentOperand.ToString().Contains("."))
+                        {
+                            CurrentOperand.Append(".");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
+                    {
+                        Operator = buttonNumber;
+                        CurrentOperand.Append(buttonNumber);
+                        PreviousOperand.Clear();
+                        PreviousOperand.Append(CurrentOperand);
+                        CurrentOperand.Clear();
+                    }
+                    else
+                    {
+                        CurrentOperand.Append(buttonNumber);
+                    }
+                }
+            }
+            else
+            {
+                if (buttonNumber == ".")
+                {
+                    if (!CurrentOperand.ToString().Contains("."))
+                    {
+                        CurrentOperand.Append(".");
+                        NewOperation = false;
+                    }
+                    else
+                    {
+                        CurrentOperand.Clear();
+                        CurrentOperand.Append("0.");
+                        NewOperation = false;
+                    }
+                }
+                else if (buttonNumber == "*" || buttonNumber == "+" || buttonNumber == "-" || buttonNumber == "/")
+                {
+                    Operator = buttonNumber;
+                    CurrentOperand.Append(buttonNumber);
+                    PreviousOperand.Clear();
+                    PreviousOperand.Append(CurrentOperand);
+                    CurrentOperand.Clear();
+                    CurrentOperand.Append("0");
+                    NewOperation = false;
+                }
+                else
+                {
+                    CurrentOperand.Append(buttonNumber);
+                    NewOperation = false;
+                }
+
+            }
+        }
+        if (string.IsNullOrWhiteSpace(CurrentOperand.ToString()))
+        {
+            CurrentOperand.Append("0");
         }
     }
 
@@ -46,7 +148,19 @@
     {
         if (!string.IsNullOrWhiteSpace(CurrentOperand.ToString()))
         {
-            CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
+            if (CurrentOperand.ToString() != "0")
+            {
+                CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
+            }
+            else if (CurrentOperand.Length == 1)
+            {
+                CurrentOperand.Remove(CurrentOperand.Length - 1, 1);
+                CurrentOperand.Append("0");
+            }
+            else
+            {
+                return;
+            }
         }
     }
 
@@ -54,6 +168,8 @@
     {
         CurrentOperand.Clear();
         PreviousOperand.Clear();
+        CurrentOperand.Append("0");
+        OperatorExists = false;    
     }
 
     private void SelectOperation(string NewOperator)
@@ -65,6 +181,7 @@
             PreviousOperand.Append(NewOperator);
             CurrentOperand.Clear();
             Operator = NewOperator;
+            OperatorExists = true;
         }
     }
 
@@ -74,11 +191,11 @@
     {
         if (!String.IsNullOrWhiteSpace(Operator) && CurrOperand.Length > 0 && PrevOperand.Length > 0 )
         {
-            Int32 IntPrevious = 0;
-            Int32 IntCurrent = 0;
+            float IntPrevious = 0;
+            float IntCurrent = 0;
             String ResultString = "";
 
-            if (Int32.TryParse(PrevOperand.ToString(), out IntPrevious) && Int32.TryParse(CurrOperand.ToString(), out IntCurrent))
+            if (float.TryParse(PrevOperand.ToString(), out IntPrevious) && float.TryParse(CurrOperand.ToString(), out IntCurrent))
             {
                 switch (Operator)
                 {
@@ -102,7 +219,8 @@
                 CurrentOperand.Clear();
                 PreviousOperand.Clear();
                 CurrentOperand.Append(ResultString);
-
+                NewOperation = true;
+                OperatorExists = false;
             }
         }
     }
