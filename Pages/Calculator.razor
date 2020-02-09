@@ -88,10 +88,8 @@
                         }
                     }
                     else
-                    {                  
-                        if 
+                    {
                         CurrentOperand.Append(buttonNumber);
-                        SafeCurrent.Clear();
                         SafeCurrent.Append(buttonNumber);
                     }
                 }
@@ -100,44 +98,19 @@
             {
                 if (buttonNumber == ".")
                 {
-                    if (!CurrentOperand.ToString().Contains("."))
-                    {
-                        CurrentOperand.Append(".");
-                        SafeCurrent.Append(".");
-                        NewOperation = false;
-                    }
-                    else
-                    {
-                        CurrentOperand.Clear();
-                        CurrentOperand.Append("0.");
-                        SafeCurrent.Clear();
-                        SafeCurrent.Append("0.");
-                        NewOperation = false;
-                    }
+                    CurrentOperand.Clear();
+                    CurrentOperand.Append("0" + buttonNumber);
+                    SafeCurrent.Clear();
+                    SafeCurrent.Append(buttonNumber);
+                    NewOperation = false;
                 }
                 else
                 {
-                    if (CurrentOperand.ToString() != "0")
-                    {
-                        CurrentOperand.Append(buttonNumber);
-                        NewOperation = false;
-                        SafeCurrent.Append(buttonNumber);
-                    }
-                    else
-                    {
-                        if (buttonNumber == "0")
-                        {
-                            return;
-                        }
-                        else
-                        {
-                            CurrentOperand.Clear();
-                            CurrentOperand.Append(buttonNumber);
-                            SafeCurrent.Clear();
-                            SafeCurrent.Append(buttonNumber);
-                            NewOperation = false;
-                        }
-                    }
+                    CurrentOperand.Clear();
+                    CurrentOperand.Append(buttonNumber);
+                    SafeCurrent.Clear();
+                    SafeCurrent.Append(buttonNumber);
+                    NewOperation = false;
                 }
             }
         }
@@ -179,25 +152,37 @@
         SafePrevious.Clear();
         SafePrevious.Append("0");
         SafeCurrent.Append("0");
+        Operator = "$";
     }
 
     private void SelectOperation(string NewOperator)
     {
         if (!string.IsNullOrWhiteSpace(NewOperator))
         {
-            PreviousOperand.Clear();
-            PreviousOperand.Append(CurrentOperand);
-            PreviousOperand.Append(NewOperator);
-            CurrentOperand.Clear();
-            Operator = NewOperator;
-            SafePrevious.Clear();
-            SafePrevious.Append(SafeCurrent);
-            SafeCurrent.Clear();
-            SafeCurrent.Append("0");
+            if (PreviousOperand.ToString().Contains("*") || PreviousOperand.ToString().Contains("-") || PreviousOperand.ToString().Contains("+") || PreviousOperand.ToString().Contains("/"))
+            {
+                PerformCalculation(SafePrevious, SafeCurrent, Operator);
+                PreviousOperand.Append(CurrentOperand + NewOperator);
+                SafePrevious.Append(CurrentOperand);
+                Operator = NewOperator;
+                CurrentOperand.Clear();
+                SafeCurrent.Clear();
+                SafeCurrent.Append("0");
+            }
+            else
+            {
+                PreviousOperand.Clear();
+                PreviousOperand.Append(CurrentOperand);
+                PreviousOperand.Append(NewOperator);
+                CurrentOperand.Clear();
+                Operator = NewOperator;
+                SafePrevious.Clear();
+                SafePrevious.Append(SafeCurrent);
+                SafeCurrent.Clear();
+                SafeCurrent.Append("0");
+            }
         }
     }
-
-
 
     private void PerformCalculation(StringBuilder PrevOperand, StringBuilder CurrOperand, string Operator)
     {
