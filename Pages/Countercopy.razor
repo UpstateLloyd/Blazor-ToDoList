@@ -1,70 +1,16 @@
-﻿@page "/countercopy"
-@using System.Text
+﻿@page "/btnselect"
 
-    <div class="calculator-wrap">
-        <h1>Counter</h1>
+<h1>Button Select</h1>
 
+<h2>@_message</h2>
 
-        <div class="calculator-grid">
-            <div class="output">
-                <div data-previous-operand class="previous-operand">123</div>
-                <div data-current-operand class="current-operand">@*@_message*@</div>
-            </div>
-            <input placeholder="Increment Amount" @bind="IncrementAmount" />
-            <button @onclick="IncrementCount">Add</button>
-            <button  @onclick="Decrement">Remove</button>
-            @*<button data-all-clear class="span-two">AC</button>
-        <button data-delete>DEL</button>
-        <button data-operation>/</button>
-        <button data-number>1</button>
-        <button data-number>2</button>
-        <button data-number>3</button>
-        <button data-operation>*</button>
-        <button data-number>4</button>
-        <button data-number>5</button>
-        <button data-number>6</button>
-        <button data-operation>+</button>
-        <button data-number>7</button>
-        <button data-number>8</button>
-        <button data-number>9</button>
-        <button data-operation>-</button>
-        <button data-number>.</button>
-        <button data-number>0</button>
-        <button data-equals class="span-two">=</button>*@
-        </div>
-        @*<input placeholder="Increment Amount" @bind="IncrementAmount" />
-        <button class="btn btn-primary" @onclick="IncrementCount">Add</button>
-        <button class="btn btn-primary" @onclick="Decrement">Remove</button>
-
-        <p>Current count: @myStringBuilder</p>*@
-
-    </div>
+<div class="calculator-grid" tabindex="0" @onkeydown="(e => UpdateHeading(e))"></div>
 
 @code {
+    private string _message = "Select a button to learn its position.";
 
-    [Parameter]
-    public string IncrementAmount { get; set; }
-
-    [Parameter]
-    public string ButtonValue { get; set; }
-
-    StringBuilder myStringBuilder = new StringBuilder();
-    void IncrementCount(MouseEventArgs e)
+    private void UpdateHeading(KeyboardEventArgs e)
     {
-        myStringBuilder.Append(IncrementAmount);
+        _message = "Alt Key: " + e.AltKey.ToString() + "Code: " + e.Code.ToString() + "Equals 'z' ?: " + e.Equals("z").ToString() + "Key: " + e.Key.ToString();
     }
-    void Decrement()
-    {
-        if (!String.IsNullOrWhiteSpace(myStringBuilder.ToString()))
-        {
-            myStringBuilder.Remove(myStringBuilder.Length-1, 1);
-        }
-    }
-
-    private void AddDigit(MouseEventArgs e, string digit)
-    {
-        //var message = "dixie";
-    }
-
 }
-
