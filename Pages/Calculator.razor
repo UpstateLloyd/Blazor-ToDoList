@@ -1,5 +1,5 @@
 ﻿@page "/calculator"
-@using System.Text 
+@using System.Text
 
 <h1>Calculator</h1>
 
@@ -7,7 +7,9 @@
 <p>Safe Previous: @SafePrevious</p>
 <p>Operator: @Operator</p>
 
-<div class="calculator-grid" tabindex="0" <!--onkeydown="(() => PerformCalculation(SafePrevious,SafeCurrent,Operator))"-->>
+<h2>@_message</h2>
+
+<div class="calculator-grid" tabindex="0" @onkeydown="(e => KeyboardInput(e))">
     <div class="output">
         <div class="previous-operand">@PreviousOperand</div>
         <div class="current-operand">@CurrentOperand</div>
@@ -234,10 +236,33 @@
                     SafeCurrent.Append(ResultString);
                     CurrentOperand.Append(ResultString);
                     NewOperation = true;
-                    Operator = "$";
                 }
+                Operator = "$";
             }
         }
     }
+
+    private string _message = "Select a button to learn its position.";
+
+    private void KeyboardInput(KeyboardEventArgs e)
+    {
+        if (e.Code.ToString().Contains("Numpad"))
+        {
+            if (e.Key.ToString() == "/" || e.Key.ToString() == "+" || e.Key.ToString() == "*" || e.Key.ToString() == "-")
+            {
+                SelectOperation(e.Key.ToString());
+            }
+            else if (e.Key.ToString() == "Enter")
+            {
+                PerformCalculation(SafePrevious, SafeCurrent, Operator);
+                Operator = "$";
+            }
+            else
+            {
+                UpdateHeading(e.Key.ToString());
+            }
+        }
+    }
+
 }
 
