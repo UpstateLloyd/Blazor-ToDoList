@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj": {}
+    "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj": {
+    "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj",
+        "projectUniqueName": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\ToDoList.csproj",
-        "packagesPath": "C:\\Users\\lhotchkiss\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lhotchkiss\\Documents\\Projects\\Scripts\\Tuts\\ToDoList\\obj\\",
+        "projectPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
+        "packagesPath": "C:\\Users\\Vajane\\.nuget\\packages\\",
+        "outputPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lhotchkiss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Vajane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -37,6 +40,48 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
