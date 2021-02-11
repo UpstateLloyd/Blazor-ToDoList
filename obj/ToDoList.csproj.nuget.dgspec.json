@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj": {}
+    "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\ToDoList.csproj": {}
   },
   "projects": {
-    "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj": {
+    "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
+        "projectUniqueName": "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\ToDoList.csproj",
-        "packagesPath": "C:\\Users\\Vajane\\.nuget\\packages\\",
-        "outputPath": "F:\\Projects\\personal\\Razor Tut\\ToDoList\\blazor-todolist\\obj\\",
+        "projectPath": "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\ToDoList.csproj",
+        "packagesPath": "C:\\Users\\lhotchkiss\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Vajane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lhotchkiss\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
@@ -99,7 +98,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.2, 3.0.2]"
+              "version": "[3.0.3, 3.0.3]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -118,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

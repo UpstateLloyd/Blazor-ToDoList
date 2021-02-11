@@ -262,6 +262,10 @@
                 UpdateHeading(e.Key.ToString());
             }
         }
+        else if (e.Key.ToString() == "Backspace" || e.Key.ToString() == "Delete")
+        {
+            DeletePressed();
+        }
     }
 
 }
