@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hMc2qR6OV0nCbJd7NqYriZdxOXrn4IdPhIM7Z73UB1I1TZpOGw2YvpyEdQMctlhQtT1COX1MaBHfehYGl2xZsg==",
+  "dgSpecHash": "8akYtmAf12kos2aJeo51liZV9AJ7yMCVtjVDpFDuL3ozSHAL/SUEK9WrPEvyK1fZvEpGwbZRxlv6HzaJSEIaIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lhotchkiss\\source\\repos\\Blazor-ToDoList\\ToDoList.csproj",
   "expectedPackageFiles": [
@@ -164,10 +164,10 @@
     "C:\\Users\\lhotchkiss\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\lhotchkiss\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\lhotchkiss\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
-    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
     "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
-    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512"
   ],
   "logs": [
     {

@@ -82,39 +82,33 @@ using ToDoList.Shared;
             __builder.OpenElement(1, "ul");
             __builder.AddMarkupContent(2, "\r\n    ");
             __builder.OpenElement(3, "li");
-            __builder.AddContent(4, 
 #nullable restore
 #line 6 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Counter.razor"
-         IncrementAmount
+__builder.AddContent(4, IncrementAmount);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(5, "\r\n    ");
             __builder.OpenElement(6, "li");
-            __builder.AddContent(7, 
 #nullable restore
 #line 7 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Counter.razor"
-         currentCount
+__builder.AddContent(7, currentCount);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(8, "\r\n    ");
             __builder.OpenElement(9, "li");
-            __builder.AddContent(10, 
 #nullable restore
 #line 8 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Counter.razor"
-         myString
+__builder.AddContent(10, myString);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(11, "\r\n");
             __builder.CloseElement();
@@ -150,15 +144,13 @@ using ToDoList.Shared;
             __builder.AddMarkupContent(22, "\r\n\r\n");
             __builder.OpenElement(23, "p");
             __builder.AddContent(24, "Current count: ");
-            __builder.AddContent(25, 
 #nullable restore
 #line 14 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Counter.razor"
-                   currentCount
+__builder.AddContent(25, currentCount);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
         }
         #pragma warning restore 1998

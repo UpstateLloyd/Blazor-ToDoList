@@ -80,15 +80,13 @@ using ToDoList.Shared;
         {
             __builder.AddMarkupContent(0, "<h1>Button Select</h1>\r\n\r\n");
             __builder.OpenElement(1, "h2");
-            __builder.AddContent(2, 
 #nullable restore
 #line 5 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Countercopy.razor"
-     _message
+__builder.AddContent(2, _message);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(3, "\r\n\r\n");
             __builder.OpenElement(4, "div");

@@ -80,15 +80,13 @@ using ToDoList.Shared;
         {
             __builder.OpenElement(0, "h1");
             __builder.AddContent(1, "Todo (");
-            __builder.AddContent(2, 
 #nullable restore
 #line 3 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Todo.razor"
-           todos.Count(ToDoList => !ToDoList.IsDone)
+__builder.AddContent(2, todos.Count(ToDoList => !ToDoList.IsDone));
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.AddContent(3, ")");
             __builder.CloseElement();
             __builder.AddMarkupContent(4, "\r\n\r\n");

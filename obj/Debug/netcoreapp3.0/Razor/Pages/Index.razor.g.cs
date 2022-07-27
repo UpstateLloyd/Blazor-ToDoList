@@ -80,7 +80,7 @@ using ToDoList.Shared;
         {
             __builder.AddMarkupContent(0, "<h1>Hello, world!</h1>\r\n\r\nWelcome to your new app.\r\n\r\n");
             __builder.OpenComponent<ToDoList.Pages.Counter>(1);
-            __builder.AddAttribute(2, "IncrementAmount", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
+            __builder.AddAttribute(2, "IncrementAmount", global::Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Int32>(
 #nullable restore
 #line 7 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Index.razor"
                           10

@@ -88,53 +88,45 @@ using System.Text;
             __builder.AddMarkupContent(0, "<h1>Calculator</h1>\r\n\r\n");
             __builder.OpenElement(1, "p");
             __builder.AddContent(2, "Safe Current: ");
-            __builder.AddContent(3, 
 #nullable restore
 #line 6 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-                  SafeCurrent
+__builder.AddContent(3, SafeCurrent);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(4, "\r\n");
             __builder.OpenElement(5, "p");
             __builder.AddContent(6, "Safe Previous: ");
-            __builder.AddContent(7, 
 #nullable restore
 #line 7 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-                   SafePrevious
+__builder.AddContent(7, SafePrevious);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(8, "\r\n");
             __builder.OpenElement(9, "p");
             __builder.AddContent(10, "Operator: ");
-            __builder.AddContent(11, 
 #nullable restore
 #line 8 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-              Operator
+__builder.AddContent(11, Operator);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(12, "\r\n\r\n");
             __builder.OpenElement(13, "h2");
-            __builder.AddContent(14, 
 #nullable restore
 #line 10 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-     _message
+__builder.AddContent(14, _message);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(15, "\r\n\r\n");
             __builder.OpenElement(16, "div");
@@ -155,28 +147,24 @@ using System.Text;
             __builder.AddMarkupContent(23, "\r\n        ");
             __builder.OpenElement(24, "div");
             __builder.AddAttribute(25, "class", "previous-operand");
-            __builder.AddContent(26, 
 #nullable restore
 #line 14 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-                                       PreviousOperand
+__builder.AddContent(26, PreviousOperand);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(27, "\r\n        ");
             __builder.OpenElement(28, "div");
             __builder.AddAttribute(29, "class", "current-operand");
-            __builder.AddContent(30, 
 #nullable restore
 #line 15 "C:\Users\lhotchkiss\source\repos\Blazor-ToDoList\Pages\Calculator.razor"
-                                      CurrentOperand
+__builder.AddContent(30, CurrentOperand);
 
 #line default
 #line hidden
 #nullable disable
-            );
             __builder.CloseElement();
             __builder.AddMarkupContent(31, "\r\n    ");
             __builder.CloseElement();
